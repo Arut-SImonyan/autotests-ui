@@ -24,7 +24,6 @@ def test_create_course(create_course_page: CreateCoursePage, courses_list_page: 
     create_course_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
 
     create_course_page.create_course_toolbar_view.check_visible()
-    create_course_page.check_visible_image_preview_empty_view()
     create_course_page.check_visible_image_upload_view()
 
     create_course_page.create_course_exercises_toolbar_view.check_visible()

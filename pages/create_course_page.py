@@ -4,6 +4,7 @@ from components.courses.create_course_exercises_toolbar_view_component import Cr
 from components.courses.create_course_form_component import CreateCourseFormComponent
 from components.courses.create_course_toolbar_view_component import CreateCourseToolbarViewComponent
 from components.views.empty_view_component import EmptyViewComponent
+from components.views.image_upload_widget_component import ImageUploadWidgetComponent
 from pages.base_page import BasePage
 
 
@@ -12,11 +13,11 @@ class CreateCoursePage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.preview_empty_view = EmptyViewComponent(page, 'create-course-preview')
         self.exercises_empty_view = EmptyViewComponent(page, 'create-course-exercises')
         self.create_course_form = CreateCourseFormComponent(page)
         self.create_course_toolbar_view = CreateCourseToolbarViewComponent(page)
         self.create_course_exercises_toolbar_view = CreateCourseExercisesToolbarViewComponent(page)
+        self.image_upload_widget = ImageUploadWidgetComponent(page, 'create-course-preview')
 
         self.preview_image = page.get_by_test_id('create-course-preview-image-upload-widget-preview-image')
 
@@ -35,11 +36,6 @@ class CreateCoursePage(BasePage):
         )
         self.preview_image_upload_input = page.get_by_test_id('create-course-preview-image-upload-widget-input')
 
-    def check_visible_image_preview_empty_view(self):
-        self.preview_empty_view.check_visible(
-            title='No image selected',
-            description='Preview of selected image will be displayed here'
-        )
 
     def check_visible_image_upload_view(self, is_image_uploaded: bool = False):
         expect(self.preview_image_upload_icon).to_be_visible()
