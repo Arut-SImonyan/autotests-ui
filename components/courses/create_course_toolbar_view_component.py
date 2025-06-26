@@ -13,7 +13,8 @@ class CreateCourseToolbarViewComponent(BaseComponent):
 
         if is_create_course_disabled:
             expect(self.create_course_button).to_be_disabled()
-        else: expect(self.create_course_button).to_be_enabled()
+        else:
+            expect(self.create_course_button).to_be_enabled()
 
     def click_create_course_button(self):
         self.create_course_button.click()
