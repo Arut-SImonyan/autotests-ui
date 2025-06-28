@@ -13,3 +13,7 @@ class RegistrationPage(BasePage):
 
         self.registration_button = Button(page, 'registration-page-registration-button', 'Registration')
         self.login_link = Link(page, 'registration-page-login-link', 'Login')
+
+    def click_registration_button(self):
+
+        self.registration_button.click()

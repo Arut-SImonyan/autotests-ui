@@ -1,8 +1,7 @@
-from playwright.sync_api import expect, Page
 import pytest
 
-from pages.courses_list_page import CoursesListPage
-from pages.create_course_page import CreateCoursePage
+from pages.courses.courses_list_page import CoursesListPage
+from pages.courses.create_course_page import CreateCoursePage
 
 
 @pytest.mark.courses
@@ -29,7 +28,7 @@ def test_create_course(create_course_page: CreateCoursePage, courses_list_page: 
     create_course_page.create_course_exercises_toolbar_view.check_visible()
     create_course_page.create_course_exercises_toolbar_view.click_create_exercise_button()
 
-    create_course_page.upload_preview_image("D:/autotests-ui/testdata/files/image.png")
+    create_course_page.upload_preview_image("/testdata/files/image.png")
 
     create_course_page.create_course_form.fill(title = "Playwright", estimated_time = "2 weeks", description = "Playwright", max_score = "100", min_score = "10")
     create_course_page.create_course_form.check_visible(title = "Playwright", estimated_time = "2 weeks", description = "Playwright", max_score = "100", min_score = "10")
