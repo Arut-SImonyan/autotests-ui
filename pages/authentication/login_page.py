@@ -1,3 +1,4 @@
+import re
 from components.authentication.login_form_component import LoginFormComponent
 from elements.button import Button
 from elements.link import Link
@@ -23,6 +24,7 @@ class LoginPage(BasePage):
     def click_registration_link(self):
 
         self.registration_link.click()
+        self.check_current_url(re.compile(".*/#/auth/registration"))
 
     def check_visible_wrong_email_or_password_alert(self):
 
