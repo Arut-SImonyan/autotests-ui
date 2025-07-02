@@ -48,7 +48,7 @@ class TestCourses:
         create_course_page.create_course_exercises_toolbar_view.check_visible()
         create_course_page.create_course_exercises_toolbar_view.click_create_exercise_button()
 
-        create_course_page.upload_preview_image("D:/autotests-ui/testdata/files/image.png")
+        create_course_page.upload_preview_image(settings.test_data.image_png_file)
 
         create_course_page.create_course_form.fill(title = "Playwright", estimated_time = "2 weeks", description = "Playwright", max_score = "100", min_score = "10")
         create_course_page.create_course_form.check_visible(title = "Playwright", estimated_time = "2 weeks", description = "Playwright", max_score = "100", min_score = "10")
