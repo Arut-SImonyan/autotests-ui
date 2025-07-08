@@ -14,7 +14,6 @@ from tools.routes import AppRoute
 
 
 @pytest.mark.courses
-@pytest.mark.regression
 @allure.tag(AllureTag.REGRESSION, AllureTag.COURSES)
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.COURSES)
